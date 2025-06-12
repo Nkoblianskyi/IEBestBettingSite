@@ -15,11 +15,10 @@ export function BettingSitesSection() {
           {bettingSites.map((site, index) => (
             <a key={site.name} href={site.url} target="_blank" rel="noopener noreferrer" className="block">
               <motion.div
-                className={`backdrop-blur-sm border rounded-lg hover:glow-effect transition-all duration-300 ${
-                  index === 0
+                className={`backdrop-blur-sm border rounded-lg hover:glow-effect transition-all duration-300 ${index === 0
                     ? "bg-gradient-to-r from-emerald-500/30 to-orange-500/30 border-emerald-500/50"
                     : "bg-gradient-to-r from-charcoal-500/80 to-charcoal-600/80 border-emerald-500/20"
-                }`}
+                  }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -46,9 +45,8 @@ export function BettingSitesSection() {
                             <Star
                               key={i}
                               size={10}
-                              className={`${
-                                i < Math.floor(site.rating) ? "text-orange-500 fill-current" : "text-gray-600"
-                              }`}
+                              className={`${i < Math.floor(site.rating) ? "text-orange-500 fill-current" : "text-gray-600"
+                                }`}
                             />
                           ))}
                         </div>
@@ -72,10 +70,10 @@ export function BettingSitesSection() {
                   </div>
                 </div>
 
-                {/* Desktop/Tablet Layout - НЕ ЧІПАЮ */}
-                <div className="hidden sm:flex sm:items-center sm:justify-between gap-3 p-3 md:p-4">
+                {/* Desktop/Tablet Layout */}
+                <div className="hidden sm:flex items-center justify-between gap-3 p-3 md:p-4">
                   {/* Left Side - Logo & Info */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 w-[280px] md:w-[320px] flex-shrink-0">
                     <img
                       src={site.logo || "/placeholder.svg"}
                       alt={`${site.name} logo`}
@@ -89,9 +87,8 @@ export function BettingSitesSection() {
                             <Star
                               key={i}
                               size={12}
-                              className={`${
-                                i < Math.floor(site.rating) ? "text-orange-500 fill-current" : "text-gray-600"
-                              }`}
+                              className={`${i < Math.floor(site.rating) ? "text-orange-500 fill-current" : "text-gray-600"
+                                }`}
                             />
                           ))}
                         </div>
@@ -104,16 +101,19 @@ export function BettingSitesSection() {
                   </div>
 
                   {/* Center - Bonus */}
-                  <div className="sm:flex-1 sm:px-3">
+                  <div className="w-[300px] md:w-[340px] flex-shrink-0">
                     <div
-                      className={`border rounded p-2 ${index === 0 ? "bg-emerald-500/30 border-emerald-500/40" : "bg-emerald-500/20 border-emerald-500/30"}`}
+                      className={`border rounded p-2 text-center ${index === 0
+                          ? "bg-emerald-500/30 border-emerald-500/40"
+                          : "bg-emerald-500/20 border-emerald-500/30"
+                        }`}
                     >
                       <p className="text-emerald-400 font-bold text-sm">{site.bonus}</p>
                     </div>
                   </div>
 
                   {/* Right Side - CTA */}
-                  <div>
+                  <div className="flex-shrink-0">
                     <motion.button
                       className="btn-primary text-sm px-4 py-2 whitespace-nowrap"
                       whileHover={{ scale: 1.05 }}
