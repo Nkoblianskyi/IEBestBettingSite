@@ -71,16 +71,16 @@ export function BettingSitesSection() {
                 </div>
 
                 {/* Desktop/Tablet Layout */}
-                <div className="hidden sm:flex items-center justify-between gap-3 p-3 md:p-4">
-                  {/* Left Side - Logo & Info */}
-                  <div className="flex items-center gap-3 w-[280px] md:w-[320px] flex-shrink-0">
+                <div className="hidden sm:grid sm:grid-cols-[200px_1fr_120px] sm:items-center sm:gap-4 p-3 md:p-4">
+                  {/* Left Side - Logo & Info - Fixed width */}
+                  <div className="flex items-center gap-3">
                     <img
                       src={site.logo || "/placeholder.svg"}
                       alt={`${site.name} logo`}
-                      className="w-24 md:w-32 h-16 object-contain bg-white/10 rounded p-1"
+                      className="w-16 h-12 object-contain bg-white/10 rounded p-1 flex-shrink-0"
                     />
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-off-white mb-1">{site.name}</h3>
+                    <div className="min-w-0">
+                      <h3 className="text-base font-bold text-off-white mb-1 truncate">{site.name}</h3>
                       <div className="flex items-center gap-1 mb-1">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
@@ -94,16 +94,16 @@ export function BettingSitesSection() {
                         </div>
                         <span className="text-orange-500 font-semibold text-xs">{site.rating}</span>
                       </div>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-gray-400 truncate">
                         {site.claimed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} claimed
                       </p>
                     </div>
                   </div>
 
-                  {/* Center - Bonus */}
-                  <div className="w-[300px] md:w-[340px] flex-shrink-0">
+                  {/* Center - Bonus - Flexible width */}
+                  <div className="px-2">
                     <div
-                      className={`border rounded p-2 text-center ${index === 0
+                      className={`border rounded p-3 text-center ${index === 0
                           ? "bg-emerald-500/30 border-emerald-500/40"
                           : "bg-emerald-500/20 border-emerald-500/30"
                         }`}
@@ -112,10 +112,10 @@ export function BettingSitesSection() {
                     </div>
                   </div>
 
-                  {/* Right Side - CTA */}
-                  <div className="flex-shrink-0">
+                  {/* Right Side - CTA - Fixed width */}
+                  <div className="flex justify-end">
                     <motion.button
-                      className="btn-primary text-sm px-4 py-2 whitespace-nowrap"
+                      className="btn-primary text-sm px-4 py-2 whitespace-nowrap w-full"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
