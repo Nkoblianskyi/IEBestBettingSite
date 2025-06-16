@@ -42,7 +42,7 @@ export const bettingSites: BettingSite[] = [
     features: ["Fast Payouts", "Live Betting", "Mobile UX"],
     cta: "Claim Bonus",
     disclaimer: "18+ | GambleAware.org | T&C Apply",
-    url: "https://www.betiton.com",
+    url: "https://www.betiton.com/en-ie/sport/",
   },
   {
     name: "Midnite",
@@ -75,7 +75,7 @@ export const bettingSites: BettingSite[] = [
     features: ["Spread Betting", "Fixed Odds", "Sports Focus"],
     cta: "Claim Bonus",
     disclaimer: "18+ | GambleAware.org | T&C Apply",
-    url: "https://www.spreadex.com",
+    url: "https://www.spreadex.com/sports/en-GB/spread-betting",
   },
   {
     name: "Mr.Play",
@@ -86,6 +86,6 @@ export const bettingSites: BettingSite[] = [
     features: ["Casino & Sports", "Irish Market", "Simple UX"],
     cta: "Claim Bonus",
     disclaimer: "18+ | GambleAware.org | T&C Apply",
-    url: "https://www.mrplay.com",
+    url: "https://ie.mrplay.com/sport/",
   },
 ]
